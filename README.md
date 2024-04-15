@@ -1,18 +1,17 @@
 # Project Name: Fresh Market
 
-## Introduction
+- Welcome to the Grocery Fresh Market Website! This platform is designed to provide a seamless shopping experience for grocery enthusiasts, offering a wide range of products and exciting promotions.
 
-Welcome to the Grocery Fresh Market Website! This platform is designed to provide a seamless shopping experience for grocery enthusiasts, offering a wide range of products and exciting promotions.
+## Live Deployment Link: https://fresh-market-website-z7sp.vercel.app/
 
-## Live Deployment Link: https://fresh-market-website.vercel.app/
-
-## Video Showcasing Inventory Management Dashboard: https://drive.google.com/file/d/1YRARDho90rmGW5JGPzO0X7n7gaI9RAHs/view?usp=sharing
+## Video Showcasing Fresh Market : https://drive.google.com/file/d/13TURhEsNAqsx9gOHPFQ0aAYGghJE1U3M/view?usp=sharing
 
 ## Technologies Used
 
 - TypeScript
 - Next.js
 - React.js
+- Tailwind CSS
 
 ## Navbar
 
@@ -67,14 +66,14 @@ Welcome to the Grocery Fresh Market Website! This platform is designed to provid
 - `Clone the Repository:`
 
 ```js
-git clone [repository_url]
+git clone https://github.com/alive1258/fresh-market-website.git
 
 ```
 
 - `Navigate to Project Directory:`
 
 ```js
-cd [Project Directory]
+cd fresh-market-website
 ```
 
 - `Install Dependencies::`

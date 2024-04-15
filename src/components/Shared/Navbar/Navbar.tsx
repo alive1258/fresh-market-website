@@ -6,8 +6,10 @@ import ffmlogo from "@/assets/images/ffmlogo.png";
 import Image from "next/image";
 
 const Navbar = () => {
+  // State variable to toggle mobile menu
   const [nav, setNav] = useState(false);
 
+  // Function to scroll to the top when navigating
   const topFunction = () => {
     setNav(!nav);
     document.body.scrollTop = 0;
