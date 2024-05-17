@@ -4,11 +4,13 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import ffmlogo from "@/assets/images/ffmlogo.png";
 import Image from "next/image";
+import { IoCartOutline } from "react-icons/io5";
+import CartModal from "../CartModal/CartModal";
 
 const Navbar = () => {
   // State variable to toggle mobile menu
   const [nav, setNav] = useState(false);
-
+  const [cartOpen, setCartOpen] = useState(false);
   // Function to scroll to the top when navigating
   const topFunction = () => {
     setNav(!nav);
@@ -16,6 +18,9 @@ const Navbar = () => {
     document.documentElement.scrollTop = 0;
   };
 
+  const handleCartModal = () => {
+    setCartOpen(!cartOpen);
+  };
   return (
     <>
       <div className="w-full z-50 fixed bg-[#191D26] text-[#ffffff]">
@@ -44,7 +49,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li>About Us</li>
+
               <li>
                 <Link onClick={topFunction} href="/category">
                   Categories
@@ -61,11 +66,13 @@ const Navbar = () => {
                   Flash Sale
                 </Link>
               </li>
-              <li>
-                <Link onClick={topFunction} href="/contact-us">
-                  Contact Us
-                </Link>
-              </li>
+
+              <button onClick={handleCartModal} className="flex">
+                <IoCartOutline size={23} />
+                <div className="bg-[#55a630] text-sm p-1 relative bottom-4 right-3 flex justify-center item-center h-6 w-6 rounded-full">
+                  10
+                </div>
+              </button>
 
               <li>
                 <Link
@@ -89,6 +96,11 @@ const Navbar = () => {
             )}
           </div>
         </div>
+
+        {/* Cart Modal */}
+        {/* Cart Modal */}
+        <CartModal cartOpen={cartOpen} />
+
         {/* mobile menu  */}
 
         <div>
@@ -104,8 +116,7 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <div className="border-b-2 border-[#55a630]"></div>
-            <li className="py-6 list-none"> ABout Us</li>
+
             <div className="border-b-2 border-[#55a630]"></div>
             <li className="py-6 list-none">
               {" "}
@@ -124,12 +135,6 @@ const Navbar = () => {
             <li className="py-6 list-none">
               <Link onClick={topFunction} href="/flash-sale">
                 Flash Sale
-              </Link>
-            </li>
-            <div className="border-b-2 border-[#55a630]"></div>
-            <li className="py-6 list-none">
-              <Link onClick={topFunction} href="/contact-us">
-                Contact Us
               </Link>
             </li>
 
