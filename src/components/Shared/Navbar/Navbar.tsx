@@ -21,6 +21,7 @@ const Navbar = () => {
   const handleCartModal = () => {
     setCartOpen(!cartOpen);
   };
+
   return (
     <>
       <div className="w-full z-50 fixed bg-[#191D26] text-[#ffffff]">
@@ -99,7 +100,7 @@ const Navbar = () => {
 
         {/* Cart Modal */}
         {/* Cart Modal */}
-        <CartModal cartOpen={cartOpen} />
+        <CartModal cartOpen={cartOpen} onClose={handleCartModal}/>
 
         {/* mobile menu  */}
 
