@@ -4,6 +4,7 @@ import { BiSolidShoppingBag } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { LuMinus } from "react-icons/lu";
 import { FaPlus } from "react-icons/fa6";
+import Link from "next/link";
 interface CartModalProps {
   cartOpen: boolean;
   onClose: () => void;
@@ -34,10 +35,9 @@ const CartModal: React.FC<CartModalProps> = ({ cartOpen, onClose }) => {
             </div>
           </div>
           <div className="mt-3">
-            <div className="bg-gray-300 ">
-              <p className="text-lg   font-semibold py-1 text-[#55a630] px-3">
-                Delivery Charge of $15
-              </p>
+            <div className="bg-gray-300 text-lg flex justify-between w-full  font-semibold py-1 text-[#55a630]">
+              <p className=" px-3">Delivery Charge of</p>
+              <p className=" px-3">$15</p>
             </div>
           </div>
         </div>
@@ -47,14 +47,18 @@ const CartModal: React.FC<CartModalProps> = ({ cartOpen, onClose }) => {
             <div className="w-full pr-2">
               <div className="text-sm">
                 <h1>Product Name</h1>
-                <p>item price</p>
+                <p>item price $10</p>
               </div>
               <div className="flex w-full justify-between items-center">
-                <div>price</div>
-                <div className="flex item-center  space-x-3">
-                  <span><LuMinus className=""/></span>
+                <div className="text-sm">price $60</div>
+                <div className="flex item-center  justify-center space-x-3">
+                  <span>
+                    <LuMinus className="" />
+                  </span>
                   <span>6</span>
-                  <span><FaPlus className=""/></span>
+                  <span>
+                    <FaPlus className="" />
+                  </span>
                 </div>
                 <div>
                   <RiDeleteBin6Line className="text-xl text-red-600" />
@@ -64,9 +68,17 @@ const CartModal: React.FC<CartModalProps> = ({ cartOpen, onClose }) => {
           </div>
         </div>
         <div className="lg:row-span-1 px-3">
-          <div className="bg-[#55a630] w-full px-3 py-1 rounded-lg ">
-            <button className="text-lg text-[#ffffff]">Proceed Checkout</button>
-          </div>
+          <Link href="/checkout">
+            <div
+              onClick={onClose}
+              className="bg-[#55a630] w-full px-3 py-1 rounded-lg "
+            >
+              <button className="text-lg  w-full text-[#ffffff] flex justify-between items-center">
+                <span>Proceed Checkout</span>
+                <span className="bg-[#ffffff] text-[#55a630] px-1">$233</span>
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
     </>
